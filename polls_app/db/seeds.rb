@@ -38,7 +38,6 @@ Answer.create(question_id: 5, answer_text: 'Toretto!')
 Answer.create(question_id: 6, answer_text: 'Yes it is')
 Answer.create(question_id: 7, answer_text: 'loll')
 
-
 Response.create(user_id: 1, answer_id: 2)
 Response.create(user_id: 2, answer_id: 2)
 Response.create(user_id: 3, answer_id: 1)

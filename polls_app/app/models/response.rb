@@ -10,16 +10,13 @@
 class Response < ApplicationRecord
 
   def sibling_responses
-    self.question.responses.where('id != (?)', self.id)
+    self.question.responses.where('responses.id != (?)', self.id)
   end
 
   def respondent_already_answered?
-
+    return false if sibling_responses.joins(:respondent).where('users.id = (?)', self.user_id).nil?
+    return true
   end
-
-  # def validate()
-  #
-  # end
 
   belongs_to :respondent,
     primary_key: :id,
