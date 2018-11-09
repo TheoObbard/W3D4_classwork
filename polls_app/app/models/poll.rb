@@ -13,6 +13,7 @@ class Poll < ApplicationRecord
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :User
+    # optional: true
 
   has_many :questions,
     primary_key: :id,

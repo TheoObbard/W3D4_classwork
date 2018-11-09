@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_08_232624) do
+ActiveRecord::Schema.define(version: 2018_11_09_002409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2018_11_08_232624) do
   create_table "polls", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "title", null: false
-    t.index ["user_id"], name: "index_polls_on_user_id", unique: true
+    t.index ["user_id"], name: "index_polls_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
