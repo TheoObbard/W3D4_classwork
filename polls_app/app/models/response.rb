@@ -9,6 +9,18 @@
 
 class Response < ApplicationRecord
 
+  def sibling_responses
+    self.question.responses.where('id != (?)', self.id)
+  end
+
+  def respondent_already_answered?
+
+  end
+
+  # def validate()
+  #
+  # end
+
   belongs_to :respondent,
     primary_key: :id,
     foreign_key: :user_id,
@@ -18,5 +30,9 @@ class Response < ApplicationRecord
     primary_key: :id,
     foreign_key: :answer_id,
     class_name: :Answer
+
+  has_one :question,
+    through: :answer_choice,
+    source: :question
 
 end
